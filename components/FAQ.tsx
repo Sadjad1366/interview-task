@@ -18,8 +18,8 @@ const FAQ = () => {
       <div className="max-w-[1200px] mx-auto p-12 flex flex-col md:flex-row gap-10 bg-white">
 
         <div className="md:w-1/3 text-right pt-2 pr-2">
-          <h2 className="text-[32px] font-bold mb-2">FAQ</h2>
-          <h3 className="text-2xl font-bold mb-2">سوالات متداولی که از ما می‌پرسید</h3>
+          <h2 className="text-[32px] text-[#141414] font-bold mb-2">FAQ</h2>
+          <h3 className="text-2xl text-[#303030] font-bold mb-2">سوالات متداولی که از ما می‌پرسید</h3>
           <p className="text-base font-medium text-[#303030] leading-[1.8]">
             سوالات متداولی که ممکن است نیاز شما نیز باشند در اینجا پاسخ داده شده‌اند.
           </p>
@@ -39,7 +39,7 @@ const FAQ = () => {
                   onClick={() => toggleIndex(index)}
                   className="w-full flex justify-between items-center text-right text-sm font-semibold p-4"
                 >
-                  <span>{item.question}</span>
+                  <span className="text-[#141414]">{item.question}</span>
                   <span className="text-[#333]">
                     {isOpen ? <CiCircleMinus size={36} /> : <CiCirclePlus size={36} />}
                   </span>
