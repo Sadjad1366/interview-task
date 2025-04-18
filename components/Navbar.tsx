@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -31,17 +31,33 @@ const Navbar = () => {
       </div>
 
       <div className="flex flex-row-reverse gap-x-8">
-        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">خانه</Link>
-        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">طراحی سایت</Link>
-        <Link className="text-[14px] font-bold" href="#">کمپین بازاریابی و تبلیغاتی</Link>
-        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">اتوماسیون و بازاریابی</Link>
-        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">تولید محتوا</Link>
-        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">سئو</Link>
-        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">تماس با ما</Link>
+        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">
+          خانه
+        </Link>
+        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">
+          طراحی سایت
+        </Link>
+        <Link className="text-[14px] font-bold text-[#141414]" href="#">
+          کمپین بازاریابی و تبلیغاتی
+        </Link>
+        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">
+          اتوماسیون و بازاریابی
+        </Link>
+        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">
+          تولید محتوا
+        </Link>
+        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">
+          سئو
+        </Link>
+        <Link className="text-[14px] font-medium text-[#A0A0A0]" href="#">
+          تماس با ما
+        </Link>
       </div>
 
       <div>
-        <button className="w-[102px] bg-[#ECECEC] rounded-2xl p-2 font-bold">LOGO</button>
+        <button className="w-[102px] bg-[#ECECEC] rounded-2xl p-2 font-bold">
+          LOGO
+        </button>
       </div>
     </motion.div>
   );
