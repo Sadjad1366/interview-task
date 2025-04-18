@@ -34,7 +34,7 @@ const ConsultantForm = () => {
       <h1 className="text-[#141414] text-xl font-bold leading-[1.8] text-center">
         فرم دریافت مشاوره
       </h1>
-      <h2 className="text-base font-semibold leading-[1.8] text-center mt-6">
+      <h2 className=" text-sm px-3 lg:text-base font-semibold leading-[1.8] text-center mt-6 mx-auto">
         .برای ارتقای بیزینس خود به دنبال فرصتی ناب هستید؟ فرم زیر را تکمیل کنید
         تا مشاوران ما به صورت کاملان رایگان شمارا راهنمایی کنند
       </h2>
@@ -48,9 +48,10 @@ const ConsultantForm = () => {
         className="w-full max-w-[1200px] mx-auto bg-white px-9 pt-10 pb-6 border border-[#E3E3E3] rounded-lg mt-8"
         dir="rtl"
       >
-        <div className="flex justify-between gap-6">
-          <div className="relative w-1/3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8">
+          <div className="relative w-full">
             <Input
+
               label="نام و نام خانوادگی خود را وارد کنید"
               placeholder="نام و نام خانوادگی"
               {...register("name")}
@@ -64,7 +65,7 @@ const ConsultantForm = () => {
               height={24}
             />
           </div>
-          <div className="relative w-1/3">
+          <div className="relative w-full">
             <Input
               label="آدرس ایمیل خود را وارد کنید"
               placeholder="مثلا email@mail.com"
@@ -79,7 +80,7 @@ const ConsultantForm = () => {
               height={24}
             />
           </div>
-          <div className="relative w-1/3">
+          <div className="relative w-full">
             <Input
               label="شماره تماس خود را وارد کنید"
               placeholder="مثلا 09123456789"
@@ -100,30 +101,37 @@ const ConsultantForm = () => {
           نوع سرویس(های) مورد نظر خود را انتخاب کنید.
         </h2>
 
-        <div className="flex justify-between gap-6 mt-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 mt-4">
           {servicesList.map((label, idx) => {
             const isChecked = selectedServices.includes(label);
             return (
-              <label
+              <div
                 key={idx}
-                className="relative w-full text-right pr-6 cursor-pointer"
+                onClick={() => {
+                  const updated = isChecked
+                    ? selectedServices.filter((s) => s !== label)
+                    : [...selectedServices, label];
+                  setValue("services", updated);
+                }}
+                className="relative w-full flex items-center justify-between gap-y-4 cursor-pointer"
               >
-                <input
-                  type="checkbox"
-                  value={label}
-                  className="absolute top-[14px] right-9 w-4 h-4"
-                  checked={isChecked}
-                  onChange={() => {
-                    const updated = isChecked
-                      ? selectedServices.filter((s) => s !== label)
-                      : [...selectedServices, label];
-                    setValue("services", updated);
-                  }}
-                />
-                <div className="rounded-full py-3 pr-8 text-xs font-bold transition bg-[#F4F4F4] text-[#141414]">
-                  {label}
+                <div className="w-full flex gap-x-2 bg-[#FCFCFC] rounded-2xl py-2 px-1">
+                  <div
+                    className={`w-4 h-4 rounded-[4px] bg-[#FCFCFC] border border-[#E3E3E3] flex items-center justify-center`}
+                  >
+                    {isChecked && (
+                      <Image
+                        src="/icons/consultantform/check.svg"
+                        alt="check"
+                        width={14}
+                        height={14}
+                      />
+                    )}
+                  </div>
+
+                  <div className="text-xs font-bold">{label}</div>
                 </div>
-              </label>
+              </div>
             );
           })}
         </div>

@@ -28,7 +28,7 @@ const ObstaclesSlider = () => {
       <div className="absolute top-[50%] -translate-y-1/2 left-8 z-30">
         <button
           ref={prevRef}
-          className={`absolute top-14 left-18 w-10 h-10 rounded-lg shadow flex items-center justify-center transition ${
+          className={`hidden absolute top-14 left-18 w-10 h-10 rounded-lg shadow lg:flex items-center justify-center transition ${
             isBeginning
               ? "bg-gray-300 cursor-not-allowed opacity-50"
               : "bg-white hover:bg-gray-100"
@@ -47,7 +47,7 @@ const ObstaclesSlider = () => {
       <div className="absolute bottom-28 right-26 -translate-y-1/2 z-30">
         <button
           ref={nextRef}
-          className={`w-10 h-10 rounded-lg shadow flex items-center justify-center transition ${
+          className={`hidden w-10 h-10 rounded-lg shadow lg:flex items-center justify-center transition ${
             isEnd
               ? "bg-gray-300 cursor-not-allowed opacity-50"
               : "bg-white hover:bg-gray-100"

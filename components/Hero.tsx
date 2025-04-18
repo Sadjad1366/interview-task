@@ -1,3 +1,59 @@
+// "use client";
+// import Image from "next/image";
+// import React from "react";
+// import { motion } from "framer-motion";
+
+// const Hero = () => {
+//   return (
+//     <div className="bg-[#FCFCFC] flex justify-between py-8 h-[548px] px-32 overflow-hidden">
+//       <div className="hidden sm:block w-full max-w-[810px] pt-16 pl-24">
+//         <Image
+//           src="/icons/hero/Frame.svg"
+//           alt="hero"
+//           width={690}
+//           height={428}
+//         />
+//       </div>
+//       <div className="block sm:hidden w-full max-w-[810px] pt-16 pl-24">
+//         <Image
+//           src="/icons/hero/heroDesk.svg"
+//           alt="hero"
+//           width={312}
+//           height={194}
+//         />
+//       </div>
+
+//       <motion.div
+//         initial={{ x: 200, opacity: 0 }}
+//         animate={{ x: 0, opacity: 1 }}
+//         transition={{ duration: 0.7, ease: "easeOut" }}
+//         className="w-full max-w-[630px] mx-auto"
+//       >
+//         <h1 className="text-[#141414] leading-[1.8] mt-20 p-2 text-2xl font-bold text-right">
+//           کمپین بازاریابی و تبلیغاتی
+//         </h1>
+//         <p className="text-lg max-w-[486px] leading-[2] ml-auto text-[#303030] font-semibold text-right mt-1 p-2">
+//           آیا به دنبال راهی مطمئن برای دیده شدنتان هستید؟ مشاوره رایگان ما به
+//           شما کمک می‌کند تا مسیر موفقیت را پیدا کنید. همین حالا قدم اول را
+//           بردارید
+//         </p>
+//         <p className="text-[#515151] text-right text-base font-bold p-2">
+//           جهت دریافت مشاوره رایگان با شماره‌ی زیر تماس بگیرید
+//         </p>
+//         <div className="text-right p-2 mt-2">
+//           <button className="text-white text-lg font-bold px-4 py-2 bg-[#7A3DE2] rounded-lg">
+//             دریافت مشاوره
+//           </button>
+//         </div>
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+// export default Hero;
+
+
+
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -5,92 +61,47 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="bg-[#FCFCFC] flex justify-between py-8 h-[548px] px-32 overflow-hidden">
-
-      <div className="w-full relative max-w-[810px] pl-32">
-        <Image
-          className="absolute top-0 left-4"
-          src="/icons/hero/hero-round.svg"
-          width={445}
-          height={445}
-          alt="rounded"
-        />
-        <Image
-          className="absolute z-10 top-7 -left-4"
-          src="/icons/hero/laptop-horn.svg"
-          width={530}
-          height={480}
-          alt="laptop"
-        />
-        <Image
-          className="absolute z-20 top-20 -left-26"
-          src="/icons/hero/rest-icon.svg"
-          width={232}
-          height={153}
-          alt="rest"
-        />
-        <Image
-          className="absolute bottom-44 -left-13"
-          src="/icons/hero/instagram-icon.svg"
-          width={40}
-          height={40}
-          alt="instagram"
-        />
-        <Image
-          className="absolute bottom-32 -left-4"
-          src="/icons/hero/facebook-icon.svg"
-          width={40}
-          height={40}
-          alt="facebook"
-        />
-        <Image
-          className="absolute bottom-22 -left-16"
-          src="/icons/hero/twitter-icon.svg"
-          width={40}
-          height={40}
-          alt="twitter"
-        />
-        <Image
-          className="absolute top-4 right-32"
-          src="/icons/hero/like-icon.svg"
-          width={40}
-          height={40}
-          alt="like"
-        />
-        <Image
-          className="absolute top-16 right-20"
-          src="/icons/hero/heart-icon.svg"
-          width={40}
-          height={40}
-          alt="heart"
-        />
-        <Image
-          className="absolute top-30 right-31"
-          src="/icons/hero/message-icon.svg"
-          width={40}
-          height={40}
-          alt="message"
-        />
+    <div className="bg-[#FCFCFC] flex flex-col lg:flex-row items-center justify-between py-8 px-6 lg:px-32 overflow-hidden min-h-[548px]">
+      {/* تصویر */}
+      <div className="w-full flex justify-center lg:justify-end mb-6 lg:mb-0">
+        <div className="block lg:hidden">
+          <Image
+            src="/icons/hero/heroDesk.svg"
+            alt="hero mobile"
+            width={312}
+            height={194}
+          />
+        </div>
+        <div className="hidden lg:block">
+          <Image
+            src="/icons/hero/Frame.svg"
+            alt="hero desktop"
+            width={690}
+            height={428}
+          />
+        </div>
       </div>
 
+      {/* متن و دکمه */}
       <motion.div
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="w-full max-w-[630px] mx-auto"
+        className="w-full lg:max-w-[630px] text-right"
       >
-        <h1 className="text-[#141414] leading-[1.8] mt-20 p-2 text-2xl font-bold text-right">
+        <h1 className="text-[#141414] leading-[1.8] mt-6 lg:mt-20 text-xl lg:text-2xl font-bold p-2">
           کمپین بازاریابی و تبلیغاتی
         </h1>
-        <p className="text-lg max-w-[486px] leading-[2] ml-auto text-[#303030] font-semibold text-right mt-1 p-2">
-          آیا به دنبال راهی مطمئن برای دیده شدنتان هستید؟ مشاوره رایگان ما به شما
-          کمک می‌کند تا مسیر موفقیت را پیدا کنید. همین حالا قدم اول را بردارید
+        <p className="text-[#303030] font-semibold mt-1 p-2 text-sm lg:text-lg leading-[2] max-w-[486px] ml-auto">
+          آیا به دنبال راهی مطمئن برای دیده شدنتان هستید؟ مشاوره رایگان ما به
+          شما کمک می‌کند تا مسیر موفقیت را پیدا کنید. همین حالا قدم اول را
+          بردارید
         </p>
-        <p className="text-[#515151] text-right text-base font-bold p-2">
+        <p className="text-[#515151] text-sm lg:text-base font-bold p-2">
           جهت دریافت مشاوره رایگان با شماره‌ی زیر تماس بگیرید
         </p>
-        <div className="text-right p-2 mt-2">
-          <button className="text-white text-lg font-bold px-4 py-2 bg-[#7A3DE2] rounded-lg">
+        <div className="p-2 mt-4">
+          <button className="text-white text-sm lg:text-lg font-bold px-4 py-2 bg-[#7A3DE2] rounded-lg">
             دریافت مشاوره
           </button>
         </div>
