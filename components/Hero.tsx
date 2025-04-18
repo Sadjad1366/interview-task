@@ -3,26 +3,26 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="bg-[#F9F9F9] flex justify-between py-8 h-[548px] px-32">
+    <div className="bg-[#FCFCFC] flex justify-between py-8 h-[548px] px-32">
       <div className="w-full relative max-w-[810px] pl-32">
         {/* لایه‌های اصلی */}
         <Image
           className="absolute top-0 left-4"
-          src="/icons/hero-round.svg"
+          src="/icons/hero/hero-round.svg"
           width={445}
           height={445}
           alt="rounded"
         />
         <Image
           className="absolute z-10 top-7 -left-4"
-          src="/icons/laptop-horn.svg"
+          src="/icons/hero/laptop-horn.svg"
           width={530}
           height={480}
           alt="laptop"
         />
         <Image
           className="absolute z-20 top-20 -left-26"
-          src="/icons/rest-icon.svg"
+          src="/icons/hero/rest-icon.svg"
           width={232}
           height={153}
           alt="rest"
@@ -30,42 +30,42 @@ const Hero = () => {
 
         <Image
           className="absolute bottom-44 -left-13"
-          src="/icons/instagram-icon.svg"
+          src="/icons/hero/instagram-icon.svg"
           width={40}
           height={40}
           alt="instagram"
         />
         <Image
           className="absolute bottom-32 -left-4"
-          src="/icons/facebook-icon.svg"
+          src="/icons/hero/facebook-icon.svg"
           width={40}
           height={40}
           alt="facebook"
         />
         <Image
           className="absolute bottom-22 -left-16"
-          src="/icons/twitter-icon.svg"
+          src="/icons/hero/twitter-icon.svg"
           width={40}
           height={40}
           alt="twitter"
         />
         <Image
           className="absolute top-4 right-32"
-          src="/icons/like-icon.svg"
+          src="/icons/hero/like-icon.svg"
           width={40}
           height={40}
           alt="like"
         />
         <Image
           className="absolute top-16 right-20"
-          src="/icons/heart-icon.svg"
+          src="/icons/hero/heart-icon.svg"
           width={40}
           height={40}
           alt="heart"
         />
         <Image
           className="absolute top-30 right-31"
-          src="/icons/message-icon.svg"
+          src="/icons/hero/message-icon.svg"
           width={40}
           height={40}
           alt="message"

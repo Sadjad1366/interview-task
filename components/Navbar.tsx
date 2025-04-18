@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="flex gap-x-2">
         <button className="border-[#ECECEC] border rounded-lg p-2">
           <Image
-            src="/icons/user-avator.svg"
+            src="/icons/navbar/user-avator.svg"
             alt="user icon"
             width={32}
             height={32}
@@ -17,7 +17,7 @@ const Navbar = () => {
         </button>
         <button className="border-[#ECECEC] border rounded-lg p-2">
           <Image
-            src="/icons/search.svg"
+            src="/icons/navbar/search.svg"
             alt="user icon"
             width={32}
             height={32}
