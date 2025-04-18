@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { Input } from "@/components/Input";
 import { servicesList } from "@/data/serviceList";
+import { motion } from "framer-motion";
 
 const ConsultantForm = () => {
   const {
@@ -22,6 +23,7 @@ const ConsultantForm = () => {
   });
 
   const selectedServices = watch("services") || [];
+
   const onSubmit = async (data: ConsultantFormData) => {
     await new Promise((res) => setTimeout(res, 2000));
     console.log("فرم ارسال شد:", data);
@@ -36,8 +38,13 @@ const ConsultantForm = () => {
         .برای ارتقای بیزینس خود به دنبال فرصتی ناب هستید؟ فرم زیر را تکمیل کنید
         تا مشاوران ما به صورت کاملان رایگان شمارا راهنمایی کنند
       </h2>
-      <form
+
+      <motion.form
         onSubmit={handleSubmit(onSubmit)}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-full max-w-[1200px] mx-auto bg-white px-9 pt-10 pb-6 border border-[#E3E3E3] rounded-lg mt-8"
         dir="rtl"
       >
@@ -88,40 +95,38 @@ const ConsultantForm = () => {
             />
           </div>
         </div>
+
         <h2 className="text-sm font-semibold leading-[1.8] mt-8">
           نوع سرویس(های) مورد نظر خود را انتخاب کنید.
         </h2>
 
         <div className="flex justify-between gap-6 mt-4">
-  {servicesList.map((label, idx) => {
-    const isChecked = selectedServices.includes(label);
-    return (
-      <label
-        key={idx}
-        className="relative w-full text-right pr-6 cursor-pointer"
-      >
-        <input
-          type="checkbox"
-          value={label}
-          className="absolute top-[14px] right-9 w-4 h-4"
-          checked={isChecked}
-          onChange={() => {
-            const updated = isChecked
-              ? selectedServices.filter((s) => s !== label)
-              : [...selectedServices, label];
-            setValue("services", updated);
-          }}
-        />
-        <div
-          className="rounded-full py-3 pr-8 text-xs font-bold transition bg-[#F4F4F4] text-[#141414]"
-        >
-          {label}
+          {servicesList.map((label, idx) => {
+            const isChecked = selectedServices.includes(label);
+            return (
+              <label
+                key={idx}
+                className="relative w-full text-right pr-6 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  value={label}
+                  className="absolute top-[14px] right-9 w-4 h-4"
+                  checked={isChecked}
+                  onChange={() => {
+                    const updated = isChecked
+                      ? selectedServices.filter((s) => s !== label)
+                      : [...selectedServices, label];
+                    setValue("services", updated);
+                  }}
+                />
+                <div className="rounded-full py-3 pr-8 text-xs font-bold transition bg-[#F4F4F4] text-[#141414]">
+                  {label}
+                </div>
+              </label>
+            );
+          })}
         </div>
-      </label>
-    );
-  })}
-</div>
-
 
         {errors.services && (
           <p className="text-red-500 text-xs mt-2">{errors.services.message}</p>
@@ -144,7 +149,7 @@ const ConsultantForm = () => {
             ثبت درخواست
           </button>
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 };
