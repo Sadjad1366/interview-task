@@ -2,8 +2,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      Footer
+    <div className='bg-[#303030] h-[365px]'>
+
     </div>
   )
 }
